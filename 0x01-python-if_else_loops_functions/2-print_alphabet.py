@@ -1,6 +1,4 @@
 #!/usr/bin/python3
 
-start = 97;
-
-for i in range(0, 26):
-    print(f"{(start + i):c}", end = "")
+for i in range(97, 123):
+    print("{}".format(chr(i)), end = "")
