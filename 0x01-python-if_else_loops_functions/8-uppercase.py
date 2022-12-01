@@ -8,4 +8,4 @@ def uppercase(str):
         else:
             strup = strup + str_c
     else:
-        print("{}".format(strup));
+        print("{}".format(strup))
