@@ -8,4 +8,3 @@ sum = 0
 for i in range(1, arg_len):
     sum += int(argv[i])
 print("{}".format(sum))
-
