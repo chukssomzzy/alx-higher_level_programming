@@ -11,7 +11,7 @@ b = int(argv[3])
 opdic = {"+": add, "-": sub, "/": div, "*": mul}
 for op in opdic:
     if op == argv[2]:
-        break;
+        break
 else:
     print("Uknown operator. Available operators: +, -, * and /")
     exit(1)
