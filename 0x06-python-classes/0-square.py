@@ -2,6 +2,7 @@
 
 """Square intialize a square class. """
 
+
 class Square:
     """Intialize a square class"""
     pass
