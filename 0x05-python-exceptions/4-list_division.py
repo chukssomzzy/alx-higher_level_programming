@@ -11,16 +11,17 @@ def list_division(my_list_1, my_list_2, list_length):
         a list of  len list_length
     """
     newList = []
+    div = 0
     for i in range(list_length):
         try:
-            newList.append(my_list_1[i] / my_list_2[i])
+            div = my_list_1[i] / my_list_2[i]
         except TypeError:
-            newList.insert(i, 0)
             print("wrong type")
         except ZeroDivisionError:
-            newList.insert(i, 0)
             print("division by 0")
         except IndexError:
-            newList.insert(i, 0)
             print("out of range")
+        finally:
+            newList.insert(i, div)
+            div = 0
     return newList
