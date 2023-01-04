@@ -13,6 +13,9 @@ def matrix_divided(matrix, div):
     Raises:
         TypeError: when not a matrix or when div is zero or element of matrix
         is not a number
+        ZeroDivisionError: division by zero
+        TypeError: div must be a number
+        TypeError: Each row of the matrix have the same size
     """
     if (not isinstance(matrix, list) or matrix == [] or
             not all(isinstance(row, list) for row in matrix) or

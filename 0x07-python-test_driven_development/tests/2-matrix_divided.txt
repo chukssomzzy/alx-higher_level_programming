@@ -58,6 +58,37 @@ Test negative divisor
 >>> matrix_divided(matrix, -9)
 [[-0.11, -0.22, -0.33], [-0.44, -0.56, -0.67]]
 
+Test divisor is a string
+
+>>> matrix = [[1, 2, 3],
+...     [4, 5, 6],
+... [7, 8, 9]
+... ]
+>>> matrix_divided(matrix, "Nan")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/data/data/com.termux/files/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 29, in matrix_divided
+    raise TypeError("div must be a number")
+TypeError: div must be a number
+
+Test divisor as None
+
+>>> matrix_divided(matrix, None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/data/data/com.termux/files/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 29, in matrix_divided
+    raise TypeError("div must be a number")
+TypeError: div must be a number
+
+Test zero divisor
+
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/data/data/com.termux/files/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 31, in matrix_divided
+    raise ZeroDivisionError("division by zero")
+ZeroDivisionError: division by zero
+
 Test matrix 1 x 3 by integer 
 
 >>> matrix = [[99, 20, 4]]
@@ -105,4 +136,55 @@ Test list of obj by integer
 Traceback (most recent call last):
   File "/data/data/com.termux/files/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 39, in matrix_divided
     raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test matrix with string
+
+>>> matrix = [[2, 3, 4],
+...     [2, "a string in a matrix", 1]
+... ]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/data/data/com.termux/files/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 21, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) of "
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test matrix = None
+
+>>> matrix = None
+>>> matrix_divided(matrix, 20)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/data/data/com.termux/files/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 24, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) of "
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+ Invalid rows
+ 
+>>> matrix = [[1, 2, 3, 20],
+...     [2, 40, 80]
+... ]
+
+>>> matrix_divided(matrix, 20)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/data/data/com.termux/files/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 27, in matrix_divided
+    raise TypeError("Each row of the matrix have the same size")
+TypeError: Each row of the matrix have the same size
+
+Empty matrix
+
+>>> matrix = [[]]
+>>> matrix_divided(matrix, 3)
+[[]]
+
+Empty list 
+
+>>> matrix = []
+>>> matrix_divided(matrix, 20)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/data/data/com.termux/files/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 24, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) of "
 TypeError: matrix must be a matrix (list of lists) of integers/floats
