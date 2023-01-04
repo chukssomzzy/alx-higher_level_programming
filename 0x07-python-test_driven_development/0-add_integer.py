@@ -1,12 +1,6 @@
 #!/usr/bin/python3
 
-"""add integer or float together
-description:
-    add_integer return the addition of two add_integer
-    if the arg are not int and not float it raises
-    exception (TypeError)
-
-"""
+"""add integer or float together """
 
 
 def add_integer(a, b=98):
