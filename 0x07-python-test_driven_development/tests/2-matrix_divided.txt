@@ -53,6 +53,20 @@ Test really small non negative dovisor
 >>> matrix_divided(matrix, 0.0000000000000000000000000000000000000000000000001)
 [[1.0000000000000001e+49, 2.0000000000000002e+49, 3e+49], [4.0000000000000003e+49, 5e+49, 6e+49]]
 
+Test for floating point elements
+
+>>> matrix = [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+>>> matrix_divided(matrix, 20)
+[[0.03, 0.05, 0.07], [0.1, 0.12, 0.15]]
+
+Test integer and floating point elements 
+
+>>> matrix = [[0.5, 1.0, 1], [2.0, 2, 3.0]]
+>>> matrix_divided(matrix, 20)
+[[0.03, 0.05, 0.05], [0.1, 0.1, 0.15]]
+
+DIVISOR
+=======
 Test negative divisor
 
 >>> matrix_divided(matrix, -9)
