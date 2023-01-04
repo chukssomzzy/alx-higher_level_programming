@@ -30,6 +30,15 @@ Test file for `add_integer`
     >>> add_integer(-2, 100.3)
     98
 
+    Test for when both are float
+    >>> add_integer(8.0, 3.0)
+    11
+
+    They are converted to float before returning
+
+    Non numbers
+    ===========
+
     Test for a positive number and a string
     >>> add_integer(4, "school")
     Traceback (most recent call last):
@@ -52,3 +61,23 @@ Test file for `add_integer`
         error should be from be 
         now
     TypeError: b must be an integer
+
+    When both are not a number
+    >>> add_integer("holberton", "school")
+    Traceback (most recent call last):
+        When both arg are not a number 
+        the error message is printed for the 
+        the first arg to raise the exception
+        as expected
+    TypeError: a must be an integer
+
+    Test for infinity and nan
+    =========================
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+        The first arg is supposed to raise the 
+        exception as always
+    OverflowError: cannot convert float infinity to integer
+
+
