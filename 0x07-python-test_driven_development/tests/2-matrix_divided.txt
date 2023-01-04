@@ -40,6 +40,9 @@ Test even divisor
 
 >>> matrix_divided(matrix, 2)
 [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+The original matrix is left unchanged
+
 >>> print(matrix)
 [[1, 2, 3], [4, 5, 6]]
 
@@ -108,6 +111,8 @@ Traceback (most recent call last):
     raise ZeroDivisionError("division by zero")
 ZeroDivisionError: division by zero
 
+MATRIX 
+======
 Test matrix 1 x 3 by integer 
 
 >>> matrix = [[99, 20, 4]]
@@ -202,6 +207,16 @@ Empty list
 
 >>> matrix = []
 >>> matrix_divided(matrix, 20)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/data/data/com.termux/files/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 24, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) of "
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix as string
+
+>>> matrix = "As string"
+>>> matrix_divided(matrix, 2)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "/data/data/com.termux/files/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 24, in matrix_divided
