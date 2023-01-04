@@ -1,0 +1,108 @@
+
+==============
+matrix_divided
+==============
+
+Usage
+=====
+```
+#!/usr/bin/python3
+matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+print(matrix_divided(matrix, 3))
+print(matrix)
+```
+=====
+Tests
+=====
+
+Numbers
+=======
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+
+Test odd divisor
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> print(matrix)
+[[1, 2, 3], [4, 5, 6]]
+
+Test even divisor
+
+>>> matrix_divided(matrix, 2)
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+>>> print(matrix)
+[[1, 2, 3], [4, 5, 6]]
+
+Test really large divisor
+
+>>> matrix_divided(matrix, 99999999)
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Test really small non negative dovisor
+
+>>> matrix_divided(matrix, 0.0000000000000000000000000000000000000000000000001)
+[[1.0000000000000001e+49, 2.0000000000000002e+49, 3e+49], [4.0000000000000003e+49, 5e+49, 6e+49]]
+
+Test negative divisor
+
+>>> matrix_divided(matrix, -9)
+[[-0.11, -0.22, -0.33], [-0.44, -0.56, -0.67]]
+
+Test matrix 1 x 3 by integer 
+
+>>> matrix = [[99, 20, 4]]
+>>> matrix_divided(matrix, 20)
+[[4.95, 1.0, 0.2]]
+
+Test matrix 3 x 1 by integer
+
+>>> matrix = [[2],
+...     [20],
+...     [48]
+... ]
+>>> matrix_divided(matrix, 25)
+[[0.08], [0.8], [1.92]]
+
+Test matrix 1 x 1 by integer
+
+>>> matrix = [[30]]
+>>> matrix_divided(matrix, 23)
+[[1.3]]
+
+
+Not a matrix 
+============
+
+Test list of integer by integer
+
+>>> matrix = [1, 3, 5]
+>>> matrix_divided(matrix, 30)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test list of string by integer
+
+>>> matrix = ["list", "of", "string"]
+>>> matrix_divided(matrix, 30)
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 39, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test list of obj by integer
+
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+  File "/data/data/com.termux/files/home/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 39, in matrix_divided
+    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+TypeError: matrix must be a matrix (list of lists) of integers/floats
