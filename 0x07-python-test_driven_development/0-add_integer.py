@@ -14,7 +14,9 @@ def add_integer(a, b=98):
     Args:
         a (int): first integer
         b (int): second integer
-    Returns summation of two ints
+    Raises:
+        TypeError: if either A or B is not int
+    Returns: summation of two ints
     """
     if type(a) != int and type(a) != float:
         raise TypeError("a must be an integer")

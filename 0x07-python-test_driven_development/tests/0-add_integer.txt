@@ -1,7 +1,11 @@
+
 =========================
 Test file for `add_integer`
 =========================
 
+Usage
+=====
+    `add_integer` return adds two integer together ```add_integer(a, b) -> a + b```
 
     >>> add_integer = __import__("0-add_integer").add_integer
     >>> add_integer(8, 3)
