@@ -1,0 +1,54 @@
+=========================
+Test file for `add_integer`
+=========================
+
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+    >>> add_integer(8, 3)
+    11
+
+    test for if nothing is passed as arg
+    >>> add_integer(None) # doctest: +REPORT_NDIFF
+    Traceback (most recent call last):
+        This should be ignored
+        you learn by doing
+    TypeError: a must be an integer
+
+    Test for one positive and one negative integer
+    >>> add_integer(100, -2)
+    98
+
+    Test for when only one arg is passed
+    >>> add_integer(2)
+    100
+
+    Test for a float and a negative number
+    >>> add_integer(100.3, -2)
+    98
+
+    Test for a negative number and a float
+    >>> add_integer(-2, 100.3)
+    98
+
+    Test for a positive number and a string
+    >>> add_integer(4, "school")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    Test for a string and a positive number
+    >>> add_integer("schoool", 4)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    Test for an empty dictionary
+    >>> add_integer({}) # doctest: +REPORT_NDIFF
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    Test for a number and a dictionary 
+    >>> add_integer(4, {})
+    Traceback (most recent call last):
+        since a is give the 
+        error should be from be 
+        now
+    TypeError: b must be an integer
