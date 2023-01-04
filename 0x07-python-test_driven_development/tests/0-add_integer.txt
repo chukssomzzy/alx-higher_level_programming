@@ -79,5 +79,3 @@ Test file for `add_integer`
         The first arg is supposed to raise the 
         exception as always
     OverflowError: cannot convert float infinity to integer
-
-
