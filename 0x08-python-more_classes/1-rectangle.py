@@ -4,20 +4,19 @@
 
 
 class Rectangle:
-    """Defines a rectangle
-    Args:
-        width (int): instance value
-        height (int): instance value
-    Raises:
-        TypeError: value must be int
-        ValueError: value must be >= 0
-    """
+    """Defines a rectangle"""
     def __init__(self, width=0, height=0):
+        """init a new rectangle
+        Args:
+            width (int): width of a rectangle
+            height (int): height of a rectangle
+            """
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
+        """get and set the width"""
         return self.__width
 
     @width.setter
@@ -30,6 +29,7 @@ class Rectangle:
 
     @property
     def height(self):
+        """get and set the height"""
         return self.__height
 
     @height.setter
