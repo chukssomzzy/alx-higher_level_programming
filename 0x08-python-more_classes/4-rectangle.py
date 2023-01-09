@@ -66,4 +66,5 @@ class Rectangle:
     def __repr__(self):
         """returns  a string representation of the class that can be parsed by
         eval"""
-        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
+        return ("Rectangle(" + str(self.__width) + ", " + str(self.__height) +
+                ")")
