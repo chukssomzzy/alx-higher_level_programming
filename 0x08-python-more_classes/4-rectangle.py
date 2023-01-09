@@ -62,6 +62,7 @@ class Rectangle:
             if (i + 1) < self.height:
                 str += '\n'
         return str
+
     def __repr__(self):
         """returns  a string representation of the class that can be parsed by
         eval"""
