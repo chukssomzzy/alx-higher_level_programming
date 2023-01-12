@@ -20,6 +20,7 @@ class Student:
 
     def to_json(self, attrs=None):
         """retrievea dict rep"""
-        if not attrs:
+        if not attrs or type(attrs) != list:
             return self.__dict__
-        return {key: self.__dict__[key] for key in attrs if key in self.__dict__}
+        return {key: self.__dict__[key]
+                for key in attrs if key in self.__dict__}
