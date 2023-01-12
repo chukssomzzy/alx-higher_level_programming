@@ -25,7 +25,8 @@ class Student:
             attrs: list of keys to get from self.__dict__
         """
 
-        if not attrs or type(attrs) != list:
+        if (not attrs or type(attrs) != list
+                or not all(type(key) for key in attrs)):
             return self.__dict__
         return {key: self.__dict__[key]
                 for key in attrs if key in self.__dict__}
