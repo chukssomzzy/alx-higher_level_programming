@@ -19,7 +19,12 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """retrievea dict rep"""
+        """retrievea dict rep
+
+        Args:
+            attrs: list of keys to get from self.__dict__
+        """
+
         if not attrs or type(attrs) != list:
             return self.__dict__
         return {key: self.__dict__[key]
