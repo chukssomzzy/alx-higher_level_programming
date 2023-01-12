@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 """return json representation of an object __dict__"""
-import json
 
 
 def class_to_json(obj):
@@ -10,4 +9,4 @@ def class_to_json(obj):
     Args:
         obj: object
     """
-    return json.dumps(obj.__dict__)
+    return obj.__dict__
