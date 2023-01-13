@@ -4,6 +4,13 @@
 
 
 def pascal_triangle(n):
+    """Generate pascal triangle
+
+    Args:
+         n (int): number to start
+    Return:
+        list of list of int or empty list if n  == 0
+    """
     triangle = [[1]]
     if n <= 0:
         return []
