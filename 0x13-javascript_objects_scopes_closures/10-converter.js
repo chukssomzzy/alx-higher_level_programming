@@ -1,12 +1,13 @@
 #!/usr/bin/node
 
-let baseG = 10;
-const converter = function (base) {
-  baseG = base;
-  return (conv);
-};
+function converter (base) {
+  this.base = base;
+  return (converter.convert);
+}
 
-const conv = (base) => base.toString(baseG);
+converter.convert = function (base) {
+  return (base.toString(this.base));
+};
 
 module.exports = {
   converter
