@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """List all `states` with a name starting with N from the databas
-e hbtn_0e_0_usa"""
+e hbtn_0e_0_usa
+"""
 import sys
 import MySQLdb
 
@@ -12,5 +13,5 @@ if __name__ == "__main__":
                            db=sys.argv[3])
     with conn.cursor() as cur:
         cur.execute("""SELECT * FROM states WHERE states.name REGEXP '^N';""")
-        for row in cur._rows:
+        for row in cur:
             print(row)
