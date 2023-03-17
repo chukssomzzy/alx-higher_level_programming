@@ -12,6 +12,9 @@ if __name__ == "__main__":
                            passwd=sys.argv[2], port=3306, charset="utf8",
                            db=sys.argv[3])
     with conn.cursor() as cur:
-        cur.execute("""SELECT * FROM states WHERE states.name REGEXP '^N';""")
+        cur.execute("""SELECT *
+                    FROM states
+                    WHERE states.name REGEXP '^N'
+                    ORDER BY states.id ASC;""")
         for row in cur:
             print(row)
