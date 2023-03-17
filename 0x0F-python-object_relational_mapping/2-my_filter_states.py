@@ -14,6 +14,6 @@ if __name__ == "__main__":
                     FROM states
                     WHERE states.name = '{}'
                     ORDER BY states.id ASC;""".format(sys.argv[4]))
-        for row in cur._rows:
+        for row in cur:
             print(row)
     conn.close()
