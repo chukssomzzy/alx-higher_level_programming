@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
-"Select states with python from mysql database"
+""" Select states with python from mysql database """
 import sys
 import MySQLdb
+
 
 if __name__ == "__main__":
     username = sys.argv[1]

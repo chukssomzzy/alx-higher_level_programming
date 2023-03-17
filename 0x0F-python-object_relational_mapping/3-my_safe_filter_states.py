@@ -9,17 +9,10 @@ import MySQLdb
 
 
 if __name__ == "__main__":
-    argv = sys.argv[1:]
-    username = argv[0]
-    password = argv[1]
-    db_name = argv[2]
-    state_name = argv[3]
-
-    conn = MySQLdb.connect(host="localhost", port=3306, user=username,
-                       passwd=password, db=db_name, charset="utf8")
+    conn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+                       passwd=sys.argv[2], db=sys.argv[3], charset="utf8")
     with conn.cursor() as cur:
         cur.execute("""SELECT * FROM states WHERE states.name = %s ORDER BY
-                    states.id ASC;""", (state_name,))
-
+                    states.id ASC;""", (sys.argv[4],))
         for row in cur:
             print(row)
