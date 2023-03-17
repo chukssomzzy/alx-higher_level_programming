@@ -16,3 +16,4 @@ if __name__ == "__main__":
                     states.id ASC;""", (sys.argv[4],))
         for row in cur:
             print(row)
+    conn.close()
