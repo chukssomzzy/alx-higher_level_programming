@@ -18,8 +18,8 @@ state_name = argv[3]
 conn = MySQLdb.connect(host="localhost", port=3306, user=username,
                        passwd=password, db=db_name, charset="utf8")
 cur = conn.cursor()
-cur.execute(f"SELECT * FROM states WHERE states.name = '{state_name}' ORDER BY\
-            states.id ASC;")
+cur.execute("""SELECT * FROM states WHERE states.name = %s ORDER BY
+            states.id ASC;""", (state_name,))
 
 for row in cur._rows:
     print(row)

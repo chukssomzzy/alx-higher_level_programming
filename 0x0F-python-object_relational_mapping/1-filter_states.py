@@ -19,3 +19,4 @@ cur = conn.cursor()
 cur.execute("""SELECT * FROM states WHERE states.name REGEXP '^N';""")
 for row in cur._rows:
     print(row)
+conn.close()
