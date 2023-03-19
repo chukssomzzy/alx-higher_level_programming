@@ -13,9 +13,10 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
+    isEmpty = True
     for id, name in session.query(State.id, State.name)\
             .order_by(State.id)[0:1]:
-        if not id:
-            print("Nothing")
-        else:
-            print(f"{id}: {name}")
+        print(f"{id}: {name}")
+        isEmpty = False
+    if isEmpty:
+        print("Nothing")
