@@ -2,12 +2,12 @@
 
 """contains the class definition of a state and an instance Base =
 declarative()"""
-from sqlalchemy import create_engine, Column, Integer, String, Sequence
+from sqlalchemy import Column, Integer, String, Sequence
 from sqlalchemy.ext.declarative import declarative_base
-import sys
+
 
 Base = declarative_base();
-engine = create_engine(
-    f"mysql+mysqldb://{sys.argv[1]}:{sys.argv[2]}@localhost/{[3]}")
-
-class
+class State(Base):
+    __tablename__ = "states"
+    id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
+    name = Column(String(128), nullable=False,)
