@@ -12,5 +12,5 @@ class State(Base):
     """Defines a base class states"""
 
     __tablename__ = "states"
-    id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
+    id = Column(Integer, Sequence('state_id_seq'), primary_key=True)
     name = Column(String(128), nullable=False)
