@@ -16,7 +16,3 @@ class State(Base):
     __tablename__ = "states"
     id = Column(Integer, Sequence('state_id_seq'), primary_key=True)
     name = Column(String(128), nullable=False)
-
-
-State.cities = relationship(
-    "City", order_by=City.id, back_populates="state")
