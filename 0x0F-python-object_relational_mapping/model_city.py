@@ -7,6 +7,8 @@ Base = declarative_base()
 
 
 class City(Base):
+    """class definition of City"""
+
     __tablename__ = "cities"
     id = Column(Integer, Sequence('city_id_sq'), primary_key=True)
     name = Column(String(128))
