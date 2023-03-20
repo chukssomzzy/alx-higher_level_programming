@@ -15,5 +15,5 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     for state, id, city in session.query(State.name, City.id, City.name).\
-            join(City, State.id == City.state_id).all():
+            join(City, State.cities).all():
         print(state, id, city)
