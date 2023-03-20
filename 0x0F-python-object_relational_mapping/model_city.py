@@ -6,8 +6,10 @@ from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
+
 class City(Base):
     __tablename__ = "cities"
     id = Column(Integer, Sequence('city_id_sq'), primary_key=True)
     name = Column(String(128))
-    stat
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    state = relationship('State', back_populates="cities")
