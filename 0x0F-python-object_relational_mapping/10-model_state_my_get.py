@@ -20,4 +20,4 @@ if __name__ == "__main__":
     if state_id:
         print(state_id.id)
     else:
-        print("Not Found")
+        print("Not found")
