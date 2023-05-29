@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""python ops"
+"""python ops"""
 
 
 def magic_calculation(a, b, c):
