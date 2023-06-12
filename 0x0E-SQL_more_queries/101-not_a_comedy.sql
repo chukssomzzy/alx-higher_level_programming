@@ -13,4 +13,5 @@ SELECT DISTINCT tv_shows.title FROM tv_shows
   WHERE 
     tv_genres.name <> 'Comedy' OR tv_genres.id IS NULL
   ORDER BY 
-    tv_shows.title ASC;
+    tv_shows.title ASC
+  LIMIT 6;
