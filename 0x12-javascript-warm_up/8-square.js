@@ -9,7 +9,7 @@ const printSquare = (size) => {
       for (let j = 0; j < size; j++) { charC += '#'; }
       if (i < size - 1) { charC += '\n'; }
     }
-  }
+  } else { return ('Missing size'); }
   return (charC);
 };
 console.log(printSquare(process.argv[2]));
