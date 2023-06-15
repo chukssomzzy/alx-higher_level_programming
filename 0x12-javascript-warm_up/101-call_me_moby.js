@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
-function callMeMoby (numTimes, func) {
-  while (numTimes--) { func(); }
-}
+const callMeMoby = function (x, theFunction) {
+  while (x--) { theFunction(); }
+};
 
 module.exports = {
   callMeMoby
