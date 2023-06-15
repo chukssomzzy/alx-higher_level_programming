@@ -5,7 +5,6 @@ const list = process.argv.splice(2);
 const secondLargest = (list) => {
   if (!list.length || list.length === 1) { return (0); }
   const sortedList = list.sort((a, b) => (b - a));
-  console.log(sortedList);
   return (sortedList[1]);
 };
 
