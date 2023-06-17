@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 
-"""Prints the state object with the name passed
-as argument from the database"""
-
+"""adds the state object Louisiana to the database"""
 import sys
+
 from model_state import Base, State
 
 from sqlalchemy import create_engine
@@ -16,8 +15,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     Base.metadata.create_all(engine)
-    state_id = session.query(State.id).filter_by(name=sys.argv[4]).first()
-    if state_id:
-        print(state_id[0])
-    else:
-        print("Not found")
+    new_state = State(name="Louisiana")
+    session.add(new_state)
+    session.commit()
+    print(new_state.id)
+
