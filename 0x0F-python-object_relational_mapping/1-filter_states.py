@@ -11,10 +11,10 @@ if __name__ == '__main__':
                          user=sys.argv[1], db=sys.argv[3]) as conn:
         with conn.cursor() as cur:
             cur.execute("""SELECT id, name FROM states
-                                WHERE
-                                    name LIKE 'N%'
-                                ORDER BY
-                                    id ASC
+                        WHERE
+                        name LIKE 'N%'
+                        ORDER BY
+                        id ASC
                         """)
             states = cur.fetchall()
             for state in states:
