@@ -9,9 +9,11 @@ Base = declarative_base()
 
 
 class State(Base):
+    """Defines a model for state"""
     __tablename__ = 'states'
     id = Column(Integer, Sequence("user_id_seq"), primary_key=True)
     name = Column(String(128), nullable=False)
 
     def __repr__(self):
+        """represents a state instance"""
         return "<State(name=%s)>" % self.name
