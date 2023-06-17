@@ -16,7 +16,10 @@ if __name__ == '__main__':
                             ON
                                 (states.id = cities.state_id)
                             WHERE
-                                states.name = %s""", (sys.argv[4],))
+                                states.name = %s
+                            ORDER BY
+                                cities.id ASC
+                        """, (sys.argv[4],))
             cities = cur.fetchall()
             for i in range(len(cities)):
                 print(cities[i][0], end='')
