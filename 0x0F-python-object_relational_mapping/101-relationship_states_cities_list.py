@@ -9,7 +9,7 @@ from relationship_state import Base, State
 from relationship_city import City
 
 from sqlalchemy import asc, create_engine
-from sqlalchemy.orm import selectinload, sessionmaker
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
@@ -19,8 +19,8 @@ if __name__ == "__main__":
     session = Session()
     Base.metadata.create_all(engine)
 
-    for state in session.query(State).join(City, State.cities).\
-            order_by(asc(State.id), asc(City.id)).all():
+    for state in session.query(State).\
+            order_by(asc(State.id)).all():
         print(f"{state.id}: {state.name}")
         for city in state.cities:
             print(f"\t{city.id}: {city.name}")
