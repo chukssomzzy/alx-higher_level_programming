@@ -16,3 +16,4 @@ class City(Base):
 
     def __repr__(self):
         """represent the city instance"""
+        return "<(name=%s)>" % self.name
