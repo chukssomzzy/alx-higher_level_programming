@@ -7,8 +7,8 @@ response
 import urllib.request
 import sys
 
+if __name__ == "__main__":
+    url_request = urllib.request.Request(sys.argv[1])
 
-url_request = urllib.request.Request(sys.argv[1])
-
-with urllib.request.urlopen(url_request) as r:
-    print(r.info()['X-Request-Id'])
+    with urllib.request.urlopen(url_request) as r:
+        print(r.info().get('X-Request-Id'))
