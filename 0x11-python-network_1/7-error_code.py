@@ -13,4 +13,4 @@ if __name__ == "__main__":
         r.raise_for_status()
         print(r.text)
     except Exception:
-        print(f"Error Code: {r.status_code}")
+        print(f"Error code: {r.status_code}")
