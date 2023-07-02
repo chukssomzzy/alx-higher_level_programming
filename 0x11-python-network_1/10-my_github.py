@@ -10,6 +10,8 @@ if __name__ == "__main__":
     header = {"Authorization":
               "Bearer github_pat_11AQN7SBY0T0wxXlTXOvyy_ZZMLc8OMSxmVSvue2FVuKS\
 sZphr2Iim1e8yahwBoetKQLDCE2XLo1piXLbB",
-              "X-Github-Api-Version": "2022-11-28"
+              "X-Github-Api-Version": "2022-11-28",
               "Accept": "application/vnd.github+json"}
-    r = request.get(f"https://api.github.com/user/{argv[1]}", header=header)
+
+    r = requests.get(f"https://api.github.com/users/{argv[1]}", headers=header)
+    print(r.json().get('id'))
