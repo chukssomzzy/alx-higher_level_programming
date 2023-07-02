@@ -8,8 +8,7 @@ from sys import argv
 
 if __name__ == "__main__":
     header = {"Authorization":
-              "Bearer github_pat_11AQN7SBY0T0wxXlTXOvyy_ZZMLc8OMSxmVSvue2FVuKS\
-sZphr2Iim1e8yahwBoetKQLDCE2XLo1piXLbB",
+              "Bearer " + argv[2],
               "X-Github-Api-Version": "2022-11-28",
               "Accept": "application/vnd.github+json"}
 
