@@ -9,7 +9,8 @@ import requests
 
 if __name__ == "__main__":
     r = requests.get(argv[1])
-    if r.raise_for_status():
-        print(f"Error code: {r.status_code}")
-    else:
+    try:
+        r.raise_for_status()
         print(r.text)
+    except Exception:
+        print(f"Error Code: {r.status_code}")
