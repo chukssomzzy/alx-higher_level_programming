@@ -7,16 +7,16 @@ try {
     if (err) throw err;
 
     const filmData = JSON.parse(body);
-    const character_urls = filmData.characters;
-    for (let i = 0; i < character_urls.length; i++) {
-      request(character_urls[i], (err, res, body) => {
+    const characterUrls = filmData.characters;
+    for (let i = 0; i < characterUrls.length; i++) {
+      request(characterUrls[i], (err, res, body) => {
         if (err) throw err;
 
-        data = JSON.parse(body);
+        const data = JSON.parse(body);
         console.log(data.name);
       });
     }
   });
 } catch (e) {
-  print(e);
+  console.log(e);
 }
