@@ -8,8 +8,6 @@ try {
     if (err) { throw err }
     fs.writeFileSync(process.argv[3], body, 'utf-8')
   })
-  process.exit(0)
 } catch (e) {
   console.log(e)
-  process.exit(1)
 }
