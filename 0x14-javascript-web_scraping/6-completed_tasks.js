@@ -1,11 +1,10 @@
 #!/usr/bin/node
 
 const request = require('request')
-
+try {
 request(process.argv[2], (err, res, body) => {
-  if (err) {
-    console.log(err)
-  }
+    if (err) throw err
+
   const tasks = JSON.parse(body)
   const completedTask = {}
   for (const task of tasks) {
@@ -19,3 +18,6 @@ request(process.argv[2], (err, res, body) => {
   }
   console.log(completedTask)
 })
+} catch (e) {
+    console.log(e)
+}

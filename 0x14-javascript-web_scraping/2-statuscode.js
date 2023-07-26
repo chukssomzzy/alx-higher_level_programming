@@ -2,9 +2,12 @@
 
 const request = require('request')
 
+try {
 request(process.argv[2], (err, res) => {
-  if (err) {
-    console.log(err)
-  }
+  if (err) throw err
+
   console.log(`code: ${res && res.statusCode}`)
 })
+} catch (e) {
+    console.log(e)
+}
