@@ -4,7 +4,6 @@ const request = require('request');
 
 try {
   request('https://swapi-api.alx-tools.com/api/films/', (err, res, body) => {
-    // filter content from request
     if (err) throw err;
 
     const movies = JSON.parse(body);
