@@ -8,8 +8,8 @@ request(url, (err, res, body) => {
 
     const filmData = JSON.parse(body)
     const character_urls = filmData.characters
-    for (const url of character_urls) {
-        request(url, (err, res, body) => {
+    for (let i = 0; i < character_urls.length; i++) {
+        request(character_urls[i], (err, res, body) => {
             if (err) throw err
 
             data = JSON.parse(body)
